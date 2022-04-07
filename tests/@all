@@ -1,0 +1,10 @@
+Coherence/@all
+4-edge-2-thread/@all
+5-edge-ext-1-rf/@all
+Preserved-read-read-program-order/@all
+6-edge-2-rf/@all
+6-edge-3-thread/@all
+PPO-variants/@all
+Register-shadowing/@all
+IRIW+addrs-twice.litmus
+MP+nondep+sync.litmus

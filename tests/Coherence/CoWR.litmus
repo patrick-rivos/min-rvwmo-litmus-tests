@@ -1,0 +1,12 @@
+RISCV iwp2.8.b
+
+(* This file was handwritten. *)
+
+{
+0:x5=1; 0:x6=x;
+1:x5=2; 1:x6=x;
+}
+ P0          | P1          ;
+ sw x5,0(x6) | sw x5,0(x6) ;
+ lw x5,0(x6) |             ;
+exists (0:x5=2 /\ x=2)

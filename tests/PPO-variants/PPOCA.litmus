@@ -1,0 +1,22 @@
+RISCV PPOCA
+
+(* This file was handwritten. *)
+
+{
+0:x5=1; 0:x6=z; 0:x7=y;
+1:x5=1; 1:x6=y; 1:x7=x; 1:x8=z;
+}
+ P0          | P1             ;
+ sw x5,0(x6) | lw x4,0(x6)    ;
+ fence rw,rw | bne x4,x0,LC00 ;
+ sw x5,0(x7) | LC00:          ;
+             | sw x5,0(x7)    ;
+             | bne x4,x0,LC01 ;
+             | LC01:          ;
+             | lw x3,0(x7)    ;
+             | bne x4,x0,LC02 ;
+             | LC02:          ;
+             | xor x9,x3,x3   ;
+             | add x10,x8,x9  ;
+             | lw x2,0(x10)   ;
+exists (1:x4=1 /\ 1:x3=1 /\ 1:x2=0)

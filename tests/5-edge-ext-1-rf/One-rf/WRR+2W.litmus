@@ -1,0 +1,18 @@
+RISCV WRR+2W
+"Rfe PodRR Fre PodWW Coe"
+Cycle=Rfe PodRR Fre PodWW Coe
+Relax=
+Safe=Rfe Fre Coe PodWW PodRR
+Generator=diy7 (version 7.56)
+Prefetch=1:x=F,1:y=T,2:y=F,2:x=W
+Com=Rf Fr Co
+Orig=Rfe PodRR Fre PodWW Coe
+{
+0:x5=2; 0:x6=x;
+1:x6=x; 1:x8=y;
+2:x5=1; 2:x6=y; 2:x7=x;
+}
+ P0          | P1          | P2          ;
+ sw x5,0(x6) | lw x5,0(x6) | sw x5,0(x6) ;
+             | lw x7,0(x8) | sw x5,0(x7) ;
+exists (x=2 /\ 1:x5=2 /\ 1:x7=0)

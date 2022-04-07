@@ -1,0 +1,15 @@
+RISCV CoWW
+"PosWW Coe"
+Cycle=Coe PosWW
+Relax=
+Safe=Coe PosWW
+Generator=diy7 (version 7.56)
+Com=Co
+Orig=PosWW Coe
+{
+0:x5=1; 0:x6=x; 0:x7=2;
+}
+ P0          ;
+ sw x5,0(x6) ;
+ sw x7,0(x6) ;
+exists (x=2)
