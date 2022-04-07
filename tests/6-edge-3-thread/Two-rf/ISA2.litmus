@@ -14,6 +14,6 @@ Orig=Fence.rw.rwdWW Rfe PodRW Rfe PodRR Fre
 }
  P0          | P1          | P2          ;
  sw x5,0(x6) | lw x5,0(x6) | lw x5,0(x6) ;
- fence rw,rw | sw x7,0(x8) | lw x7,0(x8) ;
+ fence.tso   | sw x7,0(x8) | lw x7,0(x8) ;
  sw x5,0(x7) |             |             ;
 exists (1:x5=1 /\ 2:x5=1 /\ 2:x7=0)

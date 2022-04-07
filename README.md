@@ -20,16 +20,5 @@ If you want to run diy7 to generate the tests associated with a conf
 file, use a command like this:
 `diy7 -arch RISCV -conf conf/2+2W.conf`
 
-# TODO:
-Verify lwsync/sync->RISCV fence translation correctness
-[ ] PPO000-019
-[ ] ISA2
-[ ] PPOAA
-[ ] PPOCA
-[ ] RDW
-[ ] RSW
-[ ] MP+sync+rs
-[ ] MP+nondep+sync
-
 # Running against the axiomatic model
 `herd7 -model riscv.cat tests\@all`

@@ -13,7 +13,7 @@ Orig=Fence.rw.rwdWW Rfe DpDatadW Rfi DpAddrdR Fre
 }
  P0          | P1              ;
  sw x5,0(x6) | lw x5,0(x6)     ;
- fence rw,rw | xor x7,x5,x5    ;
+ fence.tso   | xor x7,x5,x5    ;
  sw x5,0(x7) | ori x7,x7,1     ;
              | sw x7,0(x8)     ;
              | lw x9,0(x8)     ;
